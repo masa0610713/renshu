@@ -1,0 +1,537 @@
+
+#eth0というインターフェースの有効化(無効化されている場合IPアドレスを設定しても通信できない)
+[root@localhost ~]#nmcli c modify eth0 connection.autoconnect yes
+
+#eth0のIPアドレスとサブネットの設定
+[root@localhost ~]#nmcli c modify eth0 ipv4.addresses 192.168.0.1/24 
+
+#eth0のデフォルトゲートウェイの設定
+[root@localhost ~]#nmcli c modify eth0 ipv4.gateway 192.168.0.254
+
+#eth0のDHCPの無効化
+[root@localhost ~]#nmcli c modify eth0 ipv4.method manual
+
+#eth0のDNSの設定
+[root@localhost ~]#nmcli c modify eth0 ipv4.dns 8.8.8.8
+
+
+# yum list installed | grep ssh
+で、 openssh-server がインストールされていることを確認してね！
+
+なかったら、
+# yum -y install openssh-server
+
+# vim /etc/ssh/sshd_config
+項目	説明
+Port	SSH接続を受け付けるポート番号。
+※今回はデフォルト値を使用するので#でコメントアウト！
+PermitRootLogin	rootユーザーでのログインを許可するか否か。
+※今回は"no"を指定してね！
+PasswordAuthentication	パスワード認証を許可するか否か。
+※今回は"yes"を指定してね！
+
+ssh用のポートは元から開放されているかも知れないけど、一応確認してみよう。
+# firewall-cmd --list-all
+
+services の欄に ssh が入っていれば大丈夫！
+
+もし入っていなかったら、
+# firewall-cmd --permanent --add-service=ssh
+
+
+# useradd testuser
+※[testuser] には任意のユーザー名を指定
+
+さっき作ったユーザーにパスワードを設定
+# passwd testuser
+
+
+# yum list installed | grep ssh
+で、 openssh-clients がインストールされていることを確認してね！
+
+なかったら、
+# yum -y install openssh-clients
+
+$ sudo yum -y install epel-release
+
+$ sudo yum -y install ansible
+
+
+$ ansible -m ping localhost
+
+
+$ echo "localhost ansible_host=127.0.0.1 ansible_connection=local" > hosts
+
+
+$ ansible -i hosts -m ping all
+
+- hosts: all
+  tasks:
+    - name: slコマンドのyumインストール
+      yum: name=sl
+
+[root@localhost ~]# ansible-playbook yum.yml
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit
+localhost does not match 'all'
+
+PLAY [all] *******************************************************************************************
+skipping: no hosts matched
+
+PLAY RECAP *******************************************************************************************
+
+[root@localhost ~]#
+
+[root@localhost ~]# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 08:00:27:ae:1d:fc brd ff:ff:ff:ff:ff:ff
+    inet 10.148.109.59/8 brd 10.255.255.255 scope global noprefixroute dynamic enp0s3
+       valid_lft 83910sec preferred_lft 83910sec
+    inet6 fe80::388a:9812:7bdd:3c21/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+
+Ansible Handlersセクション
+
+Playbook ansible モジュール
+
+with_items
+
+shellモジュール
+
+https://www.youtube.com/watch?v=8xxlf53YrYU
+
+when
+
+https://paloaltonetworks.github.io/pan-os-ansible/
+
+https://qiita.com/shayashi1225/items/a68a672e440c026610b0
+AnsibleでREST APIリクエストする例
+uriというモジュールを利用する
+  tasks:
+    - name: Get event list
+      uri:
+        url: "https://xxxxx/xxxxxx/xxxx" 
+        headers:
+          Accept: "xxxxxxx"
+          Authorization: "xxxxxxxx"
+        status_code: 200
+        method: GET
+        return_content: yes
+      register: result_get
+
+
+https://www.wantedly.com/companies/rakus/post_articles/131811
+Ansibleでバージョンアップ作業を自動化する
+
+
+https://www.ashisuto.co.jp/product/category/system-management/ansible/
+Red Hat Ansible Automation Platform
+
+
+https://qiita.com/Senri551853/items/d9206e3b55f78db0313a
+Ansible(panosモジュール)×Jinja2でPaloaltoのログ採取を自動化してみた
+
+---
+    - hosts: all
+      gather_facts: no
+      connection: local
+    
+      # モジュールを呼び出す場合は書く
+      collections:
+        - paloaltonetworks.panos
+      
+      # セキュリティ上、インベントリファイルに書くのが望ましい
+      vars:
+        provider:                   
+          ip_address: "192.168.1.1"
+          username: "admin"
+          password: "password"
+
+      tasks:
+        - name: show running config
+          panos_op:
+            provider: "{{ provider }}"
+            cmd: "show config running "
+          register: sh_run
+
+---
+- hosts: palo
+  gather_facts: no
+  connection: local
+
+  collections:
+    - paloaltonetworks.panos
+    - community.general
+
+  tasks:
+    ########## コマンド実行 ##########
+    - name: show running config
+      panos_op:
+        provider: "{{ palo_provider }}"
+        cmd: "show config running "
+      register: sh_run
+
+    - name: show system info
+      panos_op:
+        provider: "{{ palo_provider }}"
+        cmd: "<show><system><info/></system></show>"
+        cmd_is_xml: yes
+      register: sh_system_info
+
+    ########## 実行結果から必要な情報を抜き出す ##########
+    
+    - name: show config runninng XMLパース
+      set_fact: parsed_sh_run="{{ sh_run.stdout_xml | parse_xml('group_vars/palo/general.yml') }}"
+
+    - name: show system info XMLパース
+      set_fact: parsed_system_info="{{ sh_system_info.stdout_xml | parse_xml('group_vars/palo/system_info.yml') }}"
+
+    ##########  結果を出力 #######################
+
+    - name: Markdown形式レポートに出力
+      template:
+        src: ./report_tmp.j2
+        dest: ~/Desktop/report.md
+      vars:
+        general: "{{parsed_sh_run['result']}}"
+        sys_info: "{{parsed_system_info['result']}}"
+
+
+https://techdocs.broadcom.com/jp/ja/ca-enterprise-software/layer7-api-management/api-gateway/10-0/install-configure-upgrade/upgrade-the-gateway/upgrade-an-appliance-gateway/automated-expedited-upgrade/automating-with-ansible.html
+Ansible による自動化
+Last Updated June 13, 2022
+
+
+https://tekunabe.hatenablog.jp/entry/2023/08/02/pan-config-backup
+[Ansible] Palo Alto ファイアウォールから Automation Controller のジョブテンプレートを実行する（EDA Controller なし）
+
+
+https://docs.ansible.com/automation-controller/latest/html/controllerapi/api_ref.html#/Job_Templates/Job_Templates_job_templates_launch_create
+11. Controller API Reference Guide
+
+
+https://ansible-pan.readthedocs.io/en/latest/modules/panos_api_key_module.html
+panos_api_key – retrieve api_key for username/password combination
+
+
+https://ansible-pan.readthedocs.io/en/latest/modules/index.html
+Module Reference
+Module Reference — Palo Alto Networks Ansible Galaxy Role 2.1.0 documentation
+
+    panos_address_group – Create address group objects on PAN-OS devices
+    panos_address_object – Create address objects on PAN-OS devices
+    panos_admin – Add or modify PAN-OS user accounts password
+    panos_administrator – Manage PAN-OS administrator user accounts
+    panos_admpwd – change admin password of PAN-OS device using SSH with SSH key
+    panos_aggregate_interface – configure aggregate network interfaces
+    panos_api_key – retrieve api_key for username/password combination
+    panos_bgp_aggregate – Configures a BGP Aggregation Prefix Policy
+    panos_bgp_auth – Configures a BGP Authentication Profile
+    panos_bgp_conditional_advertisement – Configures a BGP conditional advertisement
+    panos_bgp_dampening – Configures a BGP Dampening Profile
+    panos_bgp – Configures Border Gateway Protocol (BGP)
+    panos_bgp_peer_group – Configures a BGP Peer Group
+    panos_bgp_peer – Configures a BGP Peer
+    panos_bgp_policy_filter – Configures a BGP Policy Import/Export Rule
+    panos_bgp_policy_rule – Configures a BGP Policy Import/Export Rule
+    panos_bgp_redistribute – Configures a BGP Redistribution Rule
+    panos_cert_gen_ssh – generates a self-signed certificate using SSH protocol with SSH key
+    panos_check – check if PAN-OS device is ready for configuration
+    panos_commit – Commit a PAN-OS device’s candidate configuration
+    panos_dag – create a dynamic address group
+    panos_dag_tags – Create tags for DAG’s on PAN-OS devices
+    panos_email_profile – Manage email server profiles
+    panos_email_server – Manage email servers in an email profile
+    panos_facts – Collects facts from Palo Alto Networks device
+    panos_gre_tunnel – Create GRE tunnels on PAN-OS devices
+    panos_ha – Configures High Availability on PAN-OS
+    panos_http_profile_header – Manage HTTP headers for a HTTP profile
+    panos_http_profile – Manage http server profiles
+    panos_http_profile_param – Manage HTTP params for a HTTP profile
+    panos_http_server – Manage HTTP servers in a HTTP server profile
+    panos_ike_crypto_profile – Configures IKE Crypto profile on the firewall with subset of settings
+    panos_ike_gateway – Configures IKE gateway on the firewall with subset of settings
+    panos_import – import file on PAN-OS devices
+    panos_interface – configure data-port network interfaces
+    panos_ipsec_ipv4_proxyid – Configures IPv4 Proxy Id on an IPSec Tunnel
+    panos_ipsec_profile – Configures IPSec Crypto profile on the firewall with subset of settings
+    panos_ipsec_tunnel – Configures IPSec Tunnels on the firewall with subset of settings
+    panos_l2_subinterface – configure layer2 subinterface
+    panos_l3_subinterface – configure layer3 subinterface
+    panos_lic – apply authcode to a device/instance
+    panos_loadcfg – load configuration on PAN-OS device
+    panos_log_forwarding_profile_match_list_action – Manage log forwarding profile match list actions
+    panos_log_forwarding_profile_match_list – Manage log forwarding profile match lists
+    panos_log_forwarding_profile – Manage log forwarding profiles
+    panos_loopback_interface – configure network loopback interfaces
+    panos_management_profile – Manage interface management profiles
+    panos_match_rule – Test for match against a security rule on PAN-OS devices or Panorama management console
+    panos_mgtconfig – Module used to configure some of the device management
+    panos_nat_rule_facts – Get information about a NAT rule
+    panos_nat_rule – create a policy NAT rule
+    panos_object_facts – Retrieve facts about objects on PAN-OS devices
+    panos_object – create/read/update/delete object in PAN-OS or Panorama
+    panos_op – execute arbitrary OP commands on PANW devices (e.g. show interface all)
+    panos_pbf_rule – Manage Policy Based Forwarding rules on PAN-OS
+    panos_pg – create a security profiles group
+    panos_query_rules – PANOS module that allows search for security rules in PANW NGFW devices
+    panos_redistribution – Configures a Redistribution Profile on a virtual router
+    panos_registered_ip_facts – Retrieve facts about registered IPs on PAN-OS devices
+    panos_registered_ip – Register IP addresses for use with dynamic address groups on PAN-OS devices
+    panos_restart – Restart a device
+    panos_sag – Create a static address group
+    panos_security_rule_facts – Get information about a security rule
+    panos_security_rule – Create security rule policy on PAN-OS devices or Panorama management console
+    panos_service_group – Create service group objects on PAN-OS devices
+    panos_service_object – Create service objects on PAN-OS devices
+    panos_snmp_profile – Manage SNMP server profiles
+    panos_snmp_v2c_server – Manage SNMP v2c servers
+    panos_snmp_v3_server – Manage SNMP v3 servers
+    panos_software – Manage PAN-OS software versions
+    panos_static_route – Create static routes on PAN-OS devices
+    panos_syslog_profile – Manage syslog server profiles
+    panos_syslog_server – Manage syslog server profile syslog servers
+    panos_tag_object – Create tag objects on PAN-OS devices
+    panos_tunnel – configure tunnel interfaces
+    panos_type_cmd – Execute arbitrary TYPE commands on PAN-OS
+    panos_userid – Allow for registration and de-registration of userid
+    panos_virtual_router_facts – Retrieves virtual router information
+    panos_virtual_router – Configures a Virtual Router
+    panos_virtual_wire – Configures Virtual Wires (vwire)
+    panos_vlan_interface – configure VLAN interfaces
+    panos_vlan – Configures VLANs
+    panos_zone_facts – Retrieves zone information
+    panos_zone – configure security zone
+
+
+https://note.com/cloud_investor/n/n5c4c143e377b
+PANOSをeve-ng/GNS3にdeployしてみた 
+
+
+https://www.packetswitch.co.uk/palo-alto-automation/
+Palo Alto Automation - What do I do? Where do I start?
+
+
+https://live.paloaltonetworks.com/t5/automation-api/ct-p/automation
+LIVEcommunity Community Legacy Content Automation / API 
+
+
+https://live.paloaltonetworks.com/t5/ansible/ct-p/Ansible
+LIVEcommunity Community Legacy Content Automation / API Ansible 
+https://youtu.be/LVU2kiZriQw
+
+https://github.com/ansible/
+
+https://live.paloaltonetworks.com/t5/quickplay-solutions-articles/ansible-playbook-to-baseline-the-ngfw/ta-p/391322
+LIVEcommunity Community Legacy Content Quickplay Solutions Quickplay Solutions Articles Ansible Playbook to Baseline the NGFW 
+
+
+https://github.com/PaloAltoNetworks/panos-ansible-upgrade-downgrade
+PaloAltoNetworks /panos-ansible-upgrade-downgrade
+
+https://galaxy.ansible.com/ui/repo/published/paloaltonetworks/panos/
+
+
+https://ansible-pan.readthedocs.io/en/latest/modules/panos_object_module.html
+panos_object – create/read/update/delete object in PAN-OS or Panorama
+- name: search for shared address object
+  panos_object:
+    ip_address: '{{ ip_address }}'
+    username: '{{ username }}'
+    password: '{{ password }}'
+    operation: 'find'
+    address: 'DevNet'
+
+- name: create an address group in devicegroup using API key
+  panos_object:
+    ip_address: '{{ ip_address }}'
+    api_key: '{{ api_key }}'
+    operation: 'add'
+    addressgroup: 'Prod_DB_Svrs'
+    static_value: ['prod-db1', 'prod-db2', 'prod-db3']
+    description: 'Production DMZ database servers'
+    tag_name: 'DMZ'
+    devicegroup: 'DMZ Firewalls'
+
+- name: create a global service for TCP 3306
+  panos_object:
+    ip_address: '{{ ip_address }}'
+    api_key: '{{ api_key }}'
+    operation: 'add'
+    serviceobject: 'mysql-3306'
+    destination_port: '3306'
+    protocol: 'tcp'
+    description: 'MySQL on tcp/3306'
+
+- name: create a global tag
+  panos_object:
+    ip_address: '{{ ip_address }}'
+    username: '{{ username }}'
+    password: '{{ password }}'
+    operation: 'add'
+    tag_name: 'ProjectX'
+    color: 'yellow'
+    description: 'Associated with Project X'
+
+- name: delete an address object from a devicegroup using API key
+  panos_object:
+    ip_address: '{{ ip_address }}'
+    api_key: '{{ api_key }}'
+    operation: 'delete'
+    addressobject: 'Win2K test'
+
+
+
+https://docs.ansible.com/ansible/2.9_ja/user_guide/guide_rolling_upgrade.html
+Playbook の例: 継続的デリバリーおよびローリングアップグレード
+
+
+https://docs.ansible.com/ansible-tower/3.3.2/html_ja/userguide/overview.html
+
+https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-panorama-api/pan-os-xml-api-use-cases/upgrade-a-firewall-to-the-latest-pan-os-version-api
+PAN-OS® and Panorama™ API Guide
+Upgrade a Firewall to the Latest PAN-OS Version (API)
+
+https://docs.paloaltonetworks.com/pan-os/10-2/pan-os-panorama-api/pan-os-xml-api-use-cases/upgrade-a-firewall-to-the-latest-pan-os-version-api
+PAN-OS® and Panorama™ API Guide
+Upgrade a Firewall to the Latest PAN-OS Version (API)
+
+https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-panorama-api/get-started-with-the-pan-os-rest-api/update-a-virtual-router-rest-api
+PAN-OS® and Panorama™API Usage Guide
+Update a Virtual Router (REST API)
+
+
+https://solution.netone-pa.co.jp/blog/api-paloalto-pa-series
+APIってなに？から始めるパロアルトネットワークスPA活用
+
+
+https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-panorama-api/about-the-pan-os-xml-api/pan-os-xml-api-components
+PAN-OS® and Panorama™ API Guide
+PAN-OS XML API Components
+
+
+https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-panorama-api/get-started-with-the-pan-os-rest-api
+PAN-OS® and Panorama™ API Guide
+Get Started with the PAN-OS REST API
+
+
+https://docs.paloaltonetworks.com/pan-os/10-2/pan-os-panorama-api/get-started-with-the-pan-os-rest-api/access-the-rest-api#id0e536ca4-6154-4188-b70f-227c2c113ec4
+PAN-OS® and Panorama™API Usage Guide
+Access the PAN-OS REST API
+
+
+https://docs.paloaltonetworks.com/pan-os
+PAN-OS
+
+
+https://qiita.com/akira6592/items/0a632c97398a6ad728e9
+PAN-OS(Paloalto)のXML APIの叩き方
+https://PA管理IPアドレス/api/?type=keygen&user=管理者ユーザ名&password=パスワード
+
+<response status=“success”>
+  <result>
+   <key>93rfgdAGAa%fagwFGFADgfAgfadeDDYNa27Ab%aKLpPga=</key>
+  </result>
+</response>
+
+https://PA管理IPアドレス/api/?type=op&cmd=<show><running><security-policy></security-policy></running></show>&key=発行したkey
+<response cmd="status" status="success">
+<result>
+rule1 {
+        from trust;
+        source [ 192.168.0.101 192.168.0.102 192.168.0.103 ];
+        source-region none;
+        to untrust;
+        destination any;
+        destination-region none;
+        user any;
+        category any;
+        application/service  any/any/any/any;
+        action allow;
+        terminal yes;
+}
+
+rule2 {
+        from trust;
+        source any;
+        source-region none;
+        to untrust;
+        destination any;
+        destination-region none;
+        user any;
+        category any;
+        application/service  any/any/any/any;
+        action deny;
+        terminal no;
+}
+dynamic url: no
+pol objs matched
+</result>
+</response>
+
+便利なAPIブラウザ
+https://{PA管理IPアドレス}/php/rest/browse.php
+
+
+PAN‐OS REST API による レポート情報の取得
+https://live.paloaltonetworks.com/twzvq79624/attachments/twzvq79624/Management-TKB/860/1/PANOS-API-Report.pdf%5D
+
+
+https://www.youtube.com/watch?v=6iSYWfbhXU4
+
+https://www.youtube.com/watch?v=W5ySIwhL0Bs
+
+https://www.youtube.com/watch?v=y7x5GA92LJE
+Palo Alto Training | HA Firewall Upgrade
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
