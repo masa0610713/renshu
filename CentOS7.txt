@@ -495,6 +495,137 @@ https://www.youtube.com/watch?v=5gdwIni3t9A
 https://www.youtube.com/watch?v=tOYXSLb8Uuk
 
 
+============================
+もちろんです！Ansibleを使用して冗長構成のPAN-OSをアップグレードするためのPlaybookを作成できます。以下の手順に従って、PAN-OSのアップグレードに関するPlaybookを作成しましょう。
+
+Ansible Collectionのインストール: 最初に、paloaltonetworks.panos Ansible Collectionをインストールしてください。これにはAnsible 2.9以上が必要です。以下のコマンドでインストールできます:
+ansible-galaxy collection install paloaltonetworks.panos
+
+Playbookの作成: 以下の手順でPlaybookを作成します。
+defaults/main.yml ファイルを編集して、次の変数を設定します:
+PAN-OSの認証情報 (ip_address, username, password)
+NGFWがライセンスされていない場合の認証コード (auth-code)
+目的のPAN-OSバージョン (desired_version)
+コンテンツアップデートのオプション (update_content, force_update_content, update_av)
+以下のコマンドでPlaybookを実行します:
+ansible-playbook -i inventory.yml ./manage_panos_software.yml -e 'desired_version=9.0.11' -e 'ip_address=10.10.10.131' -e 'username=admin' -e 'password=HI THERE!'
+
+Skillet Playersを使用する場合: このPlaybookはPanHandlerなどのSkillet Playersで実行できます。このリポジトリをPanHandlerにインポートした後、PAN-OSのフルアップグレード/ダウングレードのDocker Skilletを「Deployment Tools Skillet Collection」で見つけることができます11。
+また、ライセンスのアクティベーションに関するPlaybookもあります。これはNGFWのライセンスを認証コードを使用してアクティベートし、取得するためのものです。詳細は以下の手順を参照してください。
+
+ライセンスアクティベーション用のPlaybookの作成:
+defaults/main.yml ファイルを編集して、次の変数を設定します:
+PAN-OSの認証情報 (ip_address, username, password)
+NGFWがライセンスされていない場合の認証コード (auth-code)
+以下のコマンドでPlaybookを実行します:
+ansible-playbook -i inventory.yml ./activate_licenses.yml -e 'ip_address=10.10.10.131' -e 'username=admin' -e 'password=HI THERE!' -e 'auth_code=SOMECODEHERE'
+
+Skillet Playersを使用する場合: このPlaybookはPanHandlerなどのSkillet Playersで実行できます。このリポジトリをPanHandlerにインポートした後、PAN-OSのライセンスアクティベーションのDocker Skilletを「Deployment Tools Skillet Collection」で見つけることができます11。22
+
+-----------------
+もちろんです！Ansibleを使用して冗長構成のPAN-OSをアップグレードするためのPlaybookを作成できます。以下の手順に従って、PAN-OSのアップグレードに関するPlaybookを作成しましょう。
+
+Ansible Collectionのインストール: 最初に、paloaltonetworks.panos Ansible Collectionをインストールしてください。これにはAnsible 2.9以上が必要です。以下のコマンドでインストールできます:
+ansible-galaxy collection install paloaltonetworks.panos
+
+Playbookの作成: 以下の手順でPlaybookを作成します。
+defaults/main.yml ファイルを編集して、次の変数を設定します:
+PAN-OSの認証情報 (ip_address, username, password)
+NGFWがライセンスされていない場合の認証コード (auth-code)
+目的のPAN-OSバージョン (desired_version)
+コンテンツアップデートのオプション (update_content, force_update_content, update_av)
+以下のコマンドでPlaybookを実行します:
+ansible-playbook -i inventory.yml ./manage_panos_software.yml -e 'desired_version=9.0.11' -e 'ip_address=10.10.10.131' -e 'username=admin' -e 'password=HI THERE!'
+
+Skillet Playersを使用する場合: このPlaybookはPanHandlerなどのSkillet Playersで実行できます。このリポジトリをPanHandlerにインポートした後、PAN-OSのフルアップグレード/ダウングレードのDocker Skilletを「Deployment Tools Skillet Collection」で見つけることができます1。
+また、ライセンスのアクティベーションに関するPlaybookもあります。これはNGFWのライセンスを認証コードを使用してアクティベートし、取得するためのものです。詳細は以下の手順を参照してください。
+
+ライセンスアクティベーション用のPlaybookの作成:
+defaults/main.yml ファイルを編集して、次の変数を設定します:
+PAN-OSの認証情報 (ip_address, username, password)
+NGFWがライセンスされていない場合の認証コード (auth-code)
+以下のコマンドでPlaybookを実行します:
+ansible-playbook -i inventory.yml ./activate_licenses.yml -e 'ip_address=10.10.10.131' -e 'username=admin' -e 'password=HI THERE!' -e 'auth_code=SOMECODEHERE'
+
+Skillet Playersを使用する場合: このPlaybookはPanHandlerなどのSkillet Playersで実行できます。このリポジトリをPanHandlerにインポートした後、PAN-OSのライセンスアクティベーションのDocker Skilletを「Deployment Tools Skillet Collection」で見つけることができます1。2
+
+================================
+もちろんです！冗長構成のVM-700でPAN-OSをアップグレードするためのAnsible Playbookを作成できます。以下は、副系からPAN-OSをアップグレードしてから再起動し、問題がなければ系切り替えを行って主系から副系に移行するPlaybookの一般的な構造です。
+
+Playbookの構成: このPlaybookは、以下のステップで構成されます。
+副系のPAN-OSアップグレード:
+副系のVM-700に対してPAN-OSのアップグレードを実行します。
+ダウンロードしたPAN-OSイメージをVM-700に適用します。
+必要に応じて再起動します。
+問題のチェック:
+副系で問題がないことを確認します。例えば、ログインできること、トラフィックが正常に流れていること、セキュリティポリシーが適用されていることなどを確認します。
+系切り替え:
+主系から副系に切り替えます。これには、ネットワークの切り替え、ルーティングの変更、ファイアウォールのポリシーの切り替えなどが含まれます。
+主系のPAN-OSアップグレード:
+主系のVM-700に対してPAN-OSのアップグレードを実行します。
+ダウンロードしたPAN-OSイメージをVM-700に適用します。
+必要に応じて再起動します。
+Handlersセクションの利用: Handlersセクションは、特定のタスクが実行された後に実行されるタスクを定義するために使用されます。例えば、PAN-OSのアップグレードが成功した場合に再起動をトリガーするためにHandlersを使用できます。以下は、Handlersセクションを使ったPlaybookの一般的な構造です。
+---
+- name: PAN-OS Upgrade and Failover
+  hosts: vm700
+  tasks:
+    - name: Upgrade PAN-OS on Standby Unit
+      panos_command:
+        cmd: request system software install version 9.0.11
+      register: upgrade_result
+      notify:
+        - Reboot Standby Unit
+
+    # Other tasks (e.g., check for issues, failover, upgrade on active unit)
+
+  handlers:
+    - name: Reboot Standby Unit
+      panos_command:
+        cmd: request restart system
+      when: upgrade_result.stdout_lines | search('Upgrade completed successfully')
+Handlersセクションは、特定の条件が満たされた場合にのみ実行されるため、PAN-OSのアップグレードが成功した場合にのみ再起動がトリガーされます。
+このPlaybookをカスタマイズして、VM-700の冗長構成でPAN-OSのアップグレードと系切り替えを実行できます。
+
+============================
+もちろんです！以下は、PanoramaからVM-700のOSをアップグレードし、再起動して問題なければ系切り替えを行い、主系から副系へ切り替わったVM-700のOSアップグレードを行い、最後に再起動してSyslogサーバへ結果を送信するためのAnsible PlaybookのYAMLファイルの一般的な構造です。
+
+---
+- name: Upgrade VM-700 OS via Panorama
+  hosts: panorama
+  tasks:
+    - name: Upgrade OS on Standby VM-700
+      panos_command:
+        cmd: request system software install version 9.0.11
+      register: upgrade_result
+      notify:
+        - Reboot Standby VM-700
+
+    # Other tasks (e.g., check for issues, failover, upgrade on active unit)
+
+  handlers:
+    - name: Reboot Standby VM-700
+      panos_command:
+        cmd: request restart system
+      when: upgrade_result.stdout_lines | search('Upgrade completed successfully')
+
+    # Additional tasks (e.g., switch to active unit, upgrade on active unit)
+
+    - name: Send result to Syslog server
+      syslog:
+        server: syslog.example.com
+        port: 514
+        msg: "VM-700 OS upgrade successful"
+
+このPlaybookをカスタマイズして、PanoramaからVM-700のOSアップグレードと系切り替えを実行できます。1
+
+===================
+
+
+
+
+
+
 
 
 
